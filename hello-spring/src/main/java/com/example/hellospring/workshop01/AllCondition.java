@@ -1,11 +1,11 @@
 package com.example.hellospring.workshop01;
 
-interface MyCondition {
+interface AllCondition {
     boolean Check(Integer input);
     String Print();
 }
 
-class BuzzCond implements MyCondition {
+class BuzzCond implements AllCondition {
     @Override
     public boolean Check(Integer input) {
         return input % 5 == 0;
@@ -17,7 +17,7 @@ class BuzzCond implements MyCondition {
     }
 
 }
-class FizzCond implements MyCondition {
+class FizzCond implements AllCondition {
     @Override
     public boolean Check(Integer input) {
         return input % 3 == 0;
@@ -29,7 +29,7 @@ class FizzCond implements MyCondition {
     }
 }
 
-class FizzBuzzCond implements MyCondition {
+class FizzBuzzCond implements AllCondition {
     FizzCond fizzCond = new FizzCond();
     BuzzCond buzzCond = new BuzzCond();
 
@@ -47,7 +47,7 @@ class FizzBuzzCond implements MyCondition {
     }
 }
 
-class KBTGCond implements MyCondition {
+class KBTGCond implements AllCondition {
 
     @Override
     public boolean Check(Integer input) {
