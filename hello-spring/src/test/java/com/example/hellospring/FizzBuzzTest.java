@@ -21,6 +21,22 @@ class FizzBuzzTest {
         assertEquals("Fizz",res);
     }
 
-    
+    @Test
+    public void InputFive(){
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String res = fizzBuzz.CheckFizzBuzz(5);
+        assertEquals("Buzz",res);
+    }
+
+    @Test
+    public void InputFifteen(){
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String res = fizzBuzz.CheckFizzBuzz(15 );
+        assertEquals("FizzBuzz",res);
+    }
+
+
 
 }
