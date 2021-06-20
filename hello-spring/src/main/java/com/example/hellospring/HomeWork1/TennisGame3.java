@@ -14,14 +14,15 @@ public class TennisGame3 {
     }
 
     public String getScore() {
-        String score;
+
         if (nowIsCallDeuce()) {
-            score = point[player1Score];
-            return (player1Score == player2Score) ? score + "-All" : score + "-" + point[player2Score];
+            return callScore();
         } else {
-            if (isDeuce())
+            if (isDeuce()){
                 return "Deuce";
-            return ((player1Score-player2Score)*(player1Score-player2Score) == 1) ? "Advantage " + getCallName() : "Win for " + getCallName();
+            }else {
+                return whoAdvantage();
+            }
         }
     }
 
@@ -45,6 +46,18 @@ public class TennisGame3 {
     public boolean nowIsCallDeuce(){
         return player1Score < 4 && player2Score < 4 && !(player1Score + player2Score == 6);
     }
+
+    public String whoAdvantage() {
+        return ((player1Score-player2Score)*(player1Score-player2Score) == 1) ? "Advantage " + getCallName() : "Win for " + getCallName();
+    }
+
+    public String callScore(){
+        String score;
+        score = point[player1Score];
+        return (player1Score == player2Score) ? score + "-All" : score + "-" + point[player2Score];
+
+    }
+
 
 
 
